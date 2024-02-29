@@ -1,0 +1,94 @@
+.profileCard {
+  padding: 2rem 1.5rem;
+  min-height: 32.3125rem;
+  border-radius: 0.9375rem;
+  background: var(--dark-navy);
+}
+
+.userDetails {
+  gap: 1.22rem;
+  display: flex;
+  margin-bottom: 2.06rem;
+  color: var(--opac-dark-white);
+}
+
+.userImageWrap {
+  width: 4.75rem;
+  height: 4.75rem;
+}
+
+.userImage {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.userProfileDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.userProfileDetails p {
+  margin: 0;
+}
+
+.userName {
+  font-size: 1rem;
+  font-weight: var(--large-font);
+}
+
+.userHandle {
+  font-size: 0.8125rem;
+  color: var(--opac-blue);
+  font-weight: var(--small-font);
+}
+
+.userDateJoined {
+  font-size: 0.8125rem;
+  font-weight: var(--small-font);
+}
+
+.profileDescription {
+  font-size: 0.8125rem;
+  margin-bottom: 1.44rem;
+  line-height: 1.5625rem;
+  font-weight: var(--small-font);
+}
+
+.profileStats {
+  display: flex;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  border-radius: 0.625rem;
+  padding: 1.19rem 0.87rem;
+  justify-content: space-around;
+  background: var(--opac-dark-black);
+}
+
+.profileStats p {
+  font-size: 0.6875rem;
+  font-weight: var(--small-font);
+}
+
+.icon {
+  height: 1.25rem;
+}
+
+.link {
+  gap: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+
+.link p {
+  font-size: 0.8125rem;
+  color: var(--opac-dark-white);
+  font-weight: var(--small-font);
+}
+
+@media screen and (min-width: 56rem) {
+  .profileCard {
+    min-height: auto;
+  }
+}

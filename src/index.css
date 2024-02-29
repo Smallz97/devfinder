@@ -1,0 +1,46 @@
+:root {
+  /* defining font weights as variables */
+  --small-font: 400;
+  --large-font: 700;
+  
+  /* defining global colors as variables */
+  --blue: rgb(0, 121, 255);
+
+  /* defining light mode colors as variables */
+  --light-grey: rgb(105, 124, 154);
+  --light-blue: rgb(75, 106, 155);
+  --light-black: rgb(43, 52, 66);
+  --light-white: rgb(246, 248, 255);
+  --transparent-white: rgb(254, 254, 254);
+  
+  
+  /* defining dark mode colors as variables */
+  --dark-navy: rgb(30, 42, 71);
+  --dark-black: rgb(20, 29, 47);
+  --dark-white: rgb(255, 255, 255);
+
+  /* defining colors with opacity */
+  --opac-blue: rgba(0, 121, 255, 1);
+  --opac-dark-navy: rgba(30, 42, 71, 1);
+  --opac-dark-black: rgba(20, 29, 47, 1);
+  --opac-dark-white: rgba(255, 255, 255, 1);
+}
+
+body {
+  margin: 0;
+  width: 100vw;
+  color: white;
+  padding: 1.94rem 1.5rem;
+  box-sizing: border-box;
+  background:  var(--dark-black);
+  font-family: "Space Mono", monospace;
+}
+
+@media screen and (min-width: 56rem) {
+  body {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+  }
+}
