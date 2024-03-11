@@ -7,9 +7,9 @@
   --blue: rgb(0, 121, 255);
 
   /* defining light mode colors as variables */
-  --light-grey: rgb(105, 124, 154);
-  --light-blue: rgb(75, 106, 155);
   --light-black: rgb(43, 52, 66);
+  --light-blue: rgb(75, 106, 155);
+  --light-grey: rgb(105, 124, 154);
   --light-white: rgb(246, 248, 255);
   --transparent-white: rgb(254, 254, 254);
   
@@ -23,15 +23,17 @@
   --opac-blue: rgba(0, 121, 255, 1);
   --opac-dark-navy: rgba(30, 42, 71, 1);
   --opac-dark-black: rgba(20, 29, 47, 1);
+  --opac-light-blue: rgba(96, 171, 255, 1);
   --opac-dark-white: rgba(255, 255, 255, 1);
+  --opac-faded-white: rgba(255, 255, 255, 0);
 }
 
 body {
   margin: 0;
   width: 100vw;
   color: white;
-  padding: 1.94rem 1.5rem;
   box-sizing: border-box;
+  padding: 1.94rem 1.5rem;
   background:  var(--dark-black);
   font-family: "Space Mono", monospace;
 }
@@ -39,8 +41,6 @@ body {
 @media screen and (min-width: 56rem) {
   body {
     display: flex;
-    height: 100vh;
-    align-items: center;
     justify-content: center;
   }
 }
