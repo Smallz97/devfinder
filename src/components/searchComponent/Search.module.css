@@ -18,6 +18,10 @@ input {
   background: var(--opac-dark-navy);
 }
 
+input:focus {
+  outline: none;
+}
+
 ::placeholder {
   font-size: 0.8125rem;
   line-height: 1.5625rem;
@@ -45,6 +49,10 @@ input {
   transform: translateY(-50%);
   background: var(--opac-blue);
   color: var(--opac-dark-white);
+}
+
+.button:hover {
+  background-color: var(--opac-light-blue);
 }
 
 @media screen and (min-width: 56rem) {

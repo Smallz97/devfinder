@@ -71,8 +71,10 @@
   font-weight: var(--small-font);
 }
 
-.icon {
-  height: 1.25rem;
+.profileLinks {
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .link {
@@ -83,8 +85,24 @@
 
 .link p {
   font-size: 0.8125rem;
-  color: var(--opac-dark-white);
   font-weight: var(--small-font);
+}
+
+.available {
+  color: var(--opac-dark-white);
+}
+
+.notavailable {
+  color: var(--light-grey);
+}
+
+a {
+  text-decoration: none;
+  color: var(--opac-dark-white);
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 @media screen and (min-width: 56rem) {
