@@ -1,71 +1,100 @@
-import { useState } from 'react'
 import { useSelector } from 'react-redux'
-import svgArray from '../../assets/iconArray'
+import svgArray from '../../app/iconsArray'
 import styles from './ProfileCard.module.css'
-import User from '../../assets/Oval.svg'
 const ProfileCard = () => {
-  const { user }= useSelector((state) => state.user);
-  const [searchedUser, setSearchedUSer] = useState(user);
+  const { user, loading, notFound } = useSelector((state) => state.user);
+
+  const date = user.dateJoined;
+  const parsedDate = new Date(date);
+
+  const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+  let year = parsedDate.getFullYear();
+  let month = parsedDate.getMonth();
+  let day = parsedDate.getDate();
+
+  let formattedDate = "joined" + " " + (day < 10 ? "0" : "") + day + " " + monthNames[month] + " " + year;
 
   const profileDetails = [
-    {textclass: "userName", text: searchedUser.fullname},
-    {textclass: "userHandle", text: searchedUser.login},
-    {textclass: "userDateJoined", text: searchedUser.dateJoined}
+    { textclass: "userName", text: user.fullname },
+    { textclass: "userHandle", text: user.login },
+    { textclass: "userDateJoined", text: formattedDate }
   ]
 
   const profileStats = [
-    {stat: "Repos", count: searchedUser.totalRepos},
-    {stat: "Followers", count: searchedUser.followers},
-    {stat: "Following", count: searchedUser.following}
+    { stat: "Repos", count: user.totalRepos },
+    { stat: "Followers", count: user.followers },
+    { stat: "Following", count: user.following }
   ]
 
-  const profileLinksData = [
-    {Icon: svgArray[0], text: searchedUser.location},
-    {Icon: svgArray[1], text: searchedUser.blog},
-    {Icon: svgArray[2], text: searchedUser.twitter},
-    {Icon: svgArray[3], text: searchedUser.company}
+  const profileLinksData1 = [
+    { Icon: svgArray[0], text: user.location },
+    { Icon: svgArray[1], text: user.blog },
   ];
 
+  const profileLinksData2 = [
+    { Icon: svgArray[2], text: user.twitter },
+    { Icon: svgArray[3], text: user.company }
+  ]
+
+  const renderProfileDetails = ({ textclass, text }, index) => {
+    const modifiedText = `@${text}`
+    return (
+      <p key={index} className={styles[textclass]}>{index === 1 ? modifiedText : text}</p>
+    );
+  }
+
+  const renderProfileStats = ({ stat, count }, index) => {
+    return (
+      <div key={index}>
+        <p>{stat}</p>
+        <p>{count}</p>
+      </div>
+    );
+  }
+
+  const renderProfileLink = ({ Icon, text }, index) => {
+    return (
+      <div key={index} className={styles.linkItem}>
+        <Icon />
+        {text === user.blog ? <p><a href={text} className={text ? "" : styles.opacity}>{text ? text : "Not available"}</a></p> : <p className={text ? "" : styles.opacity}>{text ? text : "Not available"}</p>}
+      </div>
+    );
+  }
+
   return (
-    <div className={styles.profileCard}>
-      <div className={styles.userDetails}>
-        <div className={styles.userImageWrap}>
-          <img src={User} alt="user display image" className={styles.userImage} />
-        </div>
-        <div className={styles.userProfileDetails}>
-          {profileDetails.map(({ textclass, text}, index) => {
-            return (
-              <p key={index} className={textclass}>{text}</p>
-            );
-          })}
-        </div>
-      </div>
-      <p className={styles.profileDescription}>
-        {searchedUser.bio}
-      </p>
-      <div className={styles.profileStats}>
-        {profileStats.map(({ stat, count}, index) => {
-          return (
-            <div key={index}>
-              <p>{stat}</p>
-              <p>{count}</p>
+    <>
+      {loading
+        ? <div className={styles.loadingCard}><p className={styles.loadingText}>Loading User ...</p></div>
+        : notFound
+          ? <div className={styles.loadingCard}><p className={styles.notFound}>User doesn't exist</p></div>
+          : <div className={styles.profileCard}>
+            <div className={styles.userDetails}>
+              <div className={styles.userImageWrap}>
+                <img src={user.avatar} alt="user image" className={styles.userImage} />
+              </div>
+              <div className={styles.userProfileDetails}>
+                {profileDetails.map(renderProfileDetails)}
+              </div>
             </div>
-          );
-        })}
-      </div>
-      <div className={styles.profileLinks}>
-        {profileLinksData.map(({ Icon, text }, index) => {
-          return (
-            <div key={index} className={styles.link}>
-              <Icon />
-              {text === searchedUser.blog ? <p className={text ? styles.available : styles.unavailable}><a href={text}>{text ? text : "Not available"}</a></p> : <p className={text ? styles.available : styles.notavailable}>{text ? text : "Not available"}</p>} 
-              
+            <p className={styles.profileDescription}>
+              {user.bio}
+            </p>
+            <div className={styles.profileStats}>
+              {profileStats.map(renderProfileStats)}
             </div>
-          );
-        })}
-      </div>
-    </div>
-  )
+            <div className={styles.profileLinks}>
+              <div className={styles.first}>
+                {profileLinksData1.map(renderProfileLink)}
+              </div>
+              <div className={styles.second}>
+                {profileLinksData2.map(renderProfileLink)}
+              </div>
+            </div>
+          </div>
+      }
+    </>
+  );
 }
 
 export default ProfileCard

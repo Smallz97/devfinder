@@ -13,9 +13,9 @@ input {
   height: 100%;
   border: none;
   padding: 0 2.81rem;
+  color: var(--white);
   border-radius: 0.9375rem;
-  color: var(--opac-dark-white);
-  background: var(--opac-dark-navy);
+  background: var(--dark-navy);
 }
 
 input:focus {
@@ -23,9 +23,9 @@ input:focus {
 }
 
 ::placeholder {
+  color: var(--white);
   font-size: 0.8125rem;
   line-height: 1.5625rem;
-  color: var(--opac-dark-white);
   font-weight: var(--small-font);
 }
 
@@ -38,25 +38,71 @@ input:focus {
   transform: translateY(-50%);
 }
 
+.errorMessage {
+  top: 50%;
+  margin: 0;
+  right: 6.5rem;
+  display: none;
+  color: var(--red);
+  position: absolute;
+  font-size: 0.9375rem;
+  transform: translateY(-50%);
+  font-weight: var(--large-font);
+}
+
+.showErrorMessage {
+  display: block;
+}
+
+.hideErrorMessage {
+  display: none;
+}
+
 .button {
   top: 50%;
   border: none;
   width: 5.25rem;
   right: 0.44rem;
   position: absolute;
+  color: var(--white);
   padding: 1rem 0.78rem;
   border-radius: 0.625rem;
   transform: translateY(-50%);
-  background: var(--opac-blue);
-  color: var(--opac-dark-white);
+  background: var(--deep-blue);
 }
 
 .button:hover {
-  background-color: var(--opac-light-blue);
+  background-color: var(--light-blue);
 }
 
 @media screen and (min-width: 56rem) {
   .form {
     margin-bottom: 1.5rem;
+  }
+
+  .searchWrapper {
+    height: 4.3125rem;
+  }
+
+  input {
+    padding: 0 5rem;
+  }
+
+  ::placeholder {
+    font-size: 1.125rem;
+    line-height: 1.5625rem;
+  }
+
+  .icon {
+    left: 2rem;
+  }
+
+  .noresult {
+    right: 9.75rem;
+  }
+
+  .button {
+    right: 0.62rem;
+    width: 6.625rem;
   }
 }
