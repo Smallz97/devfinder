@@ -17,7 +17,6 @@
 .userDetails {
   gap: 1.22rem;
   display: flex;
-  color: var(--white);
   margin-bottom: 2.06rem;
 }
 
@@ -58,11 +57,15 @@
   font-weight: var(--small-font);
 }
 
-.profileDescription {
+.profileDescription, .noProfileDescription {
   font-size: 0.8125rem;
   margin-bottom: 1.44rem;
   line-height: 1.5625rem;
   font-weight: var(--small-font);
+}
+
+.noProfileDescription {
+  opacity: 0.75;
 }
 
 .profileStats {
@@ -75,9 +78,14 @@
   background: var(--dark-black);
 }
 
-.profileStats p {
+.stat {
   font-size: 0.6875rem;
   font-weight: var(--small-font);
+}
+
+.count {
+  font-size: 1rem;
+  font-weight: var(--large-font);
 }
 
 .profileLinks {
@@ -93,7 +101,6 @@
 }
 
 .linkItem p {
-  color: var(--white);
   font-size: 0.8125rem;
   font-weight: var(--small-font);
 }
@@ -115,19 +122,99 @@ a:hover {
   text-align: center;
 }
 
-
-@media screen and (min-width: 56rem) {
+@media (prefers-color-scheme: light) {
   .loadingCard {
-    min-height: 18rem;
+    background: var(--pale-white);
+    box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.20);
   }
-  
+
+  .profileCard {
+    background: var(--pale-white);
+    box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.20);
+  }
+
+  .userName {
+    color: var(--black);
+  }
+
+  .userDateJoined {
+    color: var(--light-grey);
+  }
+
+  .profileStats {
+    background: var(--pale-blue);
+  }
+
+  .count {
+    color: var(--black);
+  }
+
+  a {
+    color: var(--grey);
+  }
+}
+
+@media screen and (min-width: 45rem) {
+  .loadingCard {
+    min-height: 24rem;
+  }
+
+  .profileCard {
+    padding: 2.5rem;
+  }
+
+  .userImageWrap {
+    width: 7.3125rem;
+    height: 7.3125rem;
+  }
+
+  .userDetails {
+    gap: 3.5rem;
+  }
+
+  .profileDescription, .noProfileDescription {
+    font-size: 0.9375rem;
+  }
+
+  .stat {
+    font-size: 0.8125rem;
+  }
+
+  .count {
+    font-size: 1.375rem;
+  }
+
   .profileLinks {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
   }
 
   .linkItem {
     margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width: 50rem) {
+  .userDetails {
+    gap: 4rem;
+  }
+
+  .loadingCard {
+    min-height: 26rem;
+  }
+}
+
+@media screen and (min-width: 56rem) {
+  .profileCard {
+    padding: 3rem;
+  }
+
+  .loadingCard {
+    min-height: 20rem;
+  }
+
+  .profileLinks {
+    justify-content: space-between;
   }
 }

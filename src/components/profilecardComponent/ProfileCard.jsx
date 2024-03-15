@@ -47,8 +47,8 @@ const ProfileCard = () => {
   const renderProfileStats = ({ stat, count }, index) => {
     return (
       <div key={index}>
-        <p>{stat}</p>
-        <p>{count}</p>
+        <p className={styles.stat}>{stat}</p>
+        <p className={styles.count}>{count}</p>
       </div>
     );
   }
@@ -77,8 +77,8 @@ const ProfileCard = () => {
                 {profileDetails.map(renderProfileDetails)}
               </div>
             </div>
-            <p className={styles.profileDescription}>
-              {user.bio}
+            <p className={user.bio ? styles.profileDescription : styles.noProfileDescription}>
+              {user.bio ? user.bio : "This profile has no bio"}
             </p>
             <div className={styles.profileStats}>
               {profileStats.map(renderProfileStats)}
