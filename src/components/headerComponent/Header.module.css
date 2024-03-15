@@ -18,13 +18,13 @@
   display: flex;
   height: 1.25rem;
   background: none;
-  color: var(--white);
   align-items: center;
   justify-content: space-between;
 }
 
 .themeSwitch:hover {
   cursor: pointer;
+  color: var(--blue-grey);
 }
 
 .switchIconText {
@@ -41,8 +41,28 @@
   align-items: center;
 }
 
+@media (prefers-color-scheme: light) {
+  .brand {
+    color: var(--deep-grey);
+  }
+
+  .themeSwitch {
+    color: var(--light-grey);
+  }
+
+  .themeSwitch:hover {
+    color: var(--deep-grey);
+  }
+}
+
+@media screen and (min-width: 45rem) {
+  .header {
+    margin-bottom: 2.19;
+  }
+}
+
 @media screen and (min-width: 56rem) {
   .header {
-    margin-bottom: 2.19rem;
+    margin-bottom: 2.25rem;
   }
 }
