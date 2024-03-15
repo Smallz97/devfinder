@@ -1,6 +1,15 @@
+.loadingCard {
+  display: flex;
+  min-height: 32rem;
+  align-items: center;
+  padding: 2rem 1.5rem;
+  justify-content: center;
+  border-radius: 0.9375rem;
+  background: var(--dark-navy);
+}
+
 .profileCard {
   padding: 2rem 1.5rem;
-  min-height: 32.3125rem;
   border-radius: 0.9375rem;
   background: var(--dark-navy);
 }
@@ -8,8 +17,8 @@
 .userDetails {
   gap: 1.22rem;
   display: flex;
+  color: var(--white);
   margin-bottom: 2.06rem;
-  color: var(--opac-dark-white);
 }
 
 .userImageWrap {
@@ -40,7 +49,7 @@
 
 .userHandle {
   font-size: 0.8125rem;
-  color: var(--opac-blue);
+  color: var(--deep-blue);
   font-weight: var(--small-font);
 }
 
@@ -63,7 +72,7 @@
   border-radius: 0.625rem;
   padding: 1.19rem 0.87rem;
   justify-content: space-around;
-  background: var(--opac-dark-black);
+  background: var(--dark-black);
 }
 
 .profileStats p {
@@ -72,41 +81,53 @@
 }
 
 .profileLinks {
-  gap: 1rem;
   display: flex;
   flex-direction: column;
 }
 
-.link {
+.linkItem {
   gap: 1.2rem;
   display: flex;
   align-items: center;
+  margin-bottom: 0.5rem;
 }
 
-.link p {
+.linkItem p {
+  color: var(--white);
   font-size: 0.8125rem;
   font-weight: var(--small-font);
 }
 
-.available {
-  color: var(--opac-dark-white);
-}
-
-.notavailable {
-  color: var(--light-grey);
-}
-
 a {
+  color: var(--white);
   text-decoration: none;
-  color: var(--opac-dark-white);
 }
 
 a:hover {
   text-decoration: underline;
 }
 
+.opacity {
+  opacity: .5;
+}
+
+.loadingText, .notFound {
+  text-align: center;
+}
+
+
 @media screen and (min-width: 56rem) {
-  .profileCard {
-    min-height: auto;
+  .loadingCard {
+    min-height: 18rem;
+  }
+  
+  .profileLinks {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .linkItem {
+    margin-bottom: 0;
   }
 }

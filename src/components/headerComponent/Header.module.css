@@ -11,25 +11,34 @@
   font-weight: var(--large-font);
 }
 
-.colorTheme {
+.themeSwitch {
   gap: 1rem;
+  padding: 0;
+  border: none;
   display: flex;
-  max-height: 1.25rem;
+  height: 1.25rem;
+  background: none;
+  color: var(--white);
   align-items: center;
-  /* background: pink; */
+  justify-content: space-between;
 }
 
-.themeSwitch {
+.themeSwitch:hover {
+  cursor: pointer;
+}
+
+.switchIconText {
   font-size: 0.8125rem;
   text-transform: uppercase;
   letter-spacing: 0.15625rem;
   font-weight: var(--large-font);
 }
 
-.themeIcon {
+.switchIcon {
   height: 100%;
+  display: flex;
   width: 1.25rem;
-  /* background: yellowgreen; */
+  align-items: center;
 }
 
 @media screen and (min-width: 56rem) {
