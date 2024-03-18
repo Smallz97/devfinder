@@ -22,11 +22,6 @@
   justify-content: space-between;
 }
 
-.themeSwitch:hover {
-  cursor: pointer;
-  color: var(--blue-grey);
-}
-
 .switchIconText {
   font-size: 0.8125rem;
   text-transform: uppercase;
@@ -64,5 +59,10 @@
 @media screen and (min-width: 56rem) {
   .header {
     margin-bottom: 2.25rem;
+  }
+
+  .themeSwitch:hover {
+    cursor: pointer;
+    color: var(--blue-grey);
   }
 }

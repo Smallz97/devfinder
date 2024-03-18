@@ -56,7 +56,9 @@ const ProfileCard = () => {
   const renderProfileLink = ({ Icon, text }, index) => {
     return (
       <div key={index} className={styles.linkItem}>
-        <Icon />
+        <div className={styles.linkItemIcon}>
+          <Icon />
+        </div>
         {text === user.blog ? <p><a href={text} className={text ? "" : styles.opacity}>{text ? text : "Not available"}</a></p> : <p className={text ? "" : styles.opacity}>{text ? text : "Not available"}</p>}
       </div>
     );
@@ -69,7 +71,7 @@ const ProfileCard = () => {
         : notFound
           ? <div className={styles.loadingCard}><p className={styles.notFound}>User doesn't exist</p></div>
           : <div className={styles.profileCard}>
-            <div className={styles.userDetails}>
+            <div className={`${styles.userDetails} ${styles.mobileWrap}`}>
               <div className={styles.userImageWrap}>
                 <img src={user.avatar} alt="user image" className={styles.userImage} />
               </div>
@@ -77,18 +79,26 @@ const ProfileCard = () => {
                 {profileDetails.map(renderProfileDetails)}
               </div>
             </div>
-            <p className={user.bio ? styles.profileDescription : styles.noProfileDescription}>
-              {user.bio ? user.bio : "This profile has no bio"}
-            </p>
-            <div className={styles.profileStats}>
-              {profileStats.map(renderProfileStats)}
+            <div className={`${styles.userImageWrap} ${styles.desktopImage}`}>
+              <img src={user.avatar} alt="user image" className={styles.userImage} />
             </div>
-            <div className={styles.profileLinks}>
-              <div className={styles.first}>
-                {profileLinksData1.map(renderProfileLink)}
+            <div className={styles.wrapper}>
+              <div className={`${styles.userProfileDetails} ${styles.dektopProfileDetails}`}>
+                {profileDetails.map(renderProfileDetails)}
               </div>
-              <div className={styles.second}>
-                {profileLinksData2.map(renderProfileLink)}
+              <p className={user.bio ? styles.profileDescription : styles.noProfileDescription}>
+                {user.bio ? user.bio : "This profile has no bio"}
+              </p>
+              <div className={styles.profileStats}>
+                {profileStats.map(renderProfileStats)}
+              </div>
+              <div className={styles.profileLinks}>
+                <div className={styles.first}>
+                  {profileLinksData1.map(renderProfileLink)}
+                </div>
+                <div className={styles.second}>
+                  {profileLinksData2.map(renderProfileLink)}
+                </div>
               </div>
             </div>
           </div>
