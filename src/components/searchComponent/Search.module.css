@@ -70,11 +70,6 @@ input:focus {
   background: var(--deep-blue);
 }
 
-.button:hover {
-  cursor: pointer;
-  background-color: var(--light-blue);
-}
-
 @media (prefers-color-scheme: light) {
   input {
     color: var(--deep-grey);
@@ -118,5 +113,13 @@ input:focus {
   .button {
     right: 0.62rem;
     width: 6.625rem;
+  }
+
+  .button:hover {
+    background-color: var(--light-blue);
+  }
+  
+  input, .button:hover {
+    cursor: pointer;
   }
 }

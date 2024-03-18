@@ -41,6 +41,14 @@
   margin: 0;
 }
 
+.desktopImage {
+  display: none;
+}
+
+.dektopProfileDetails {
+  display: none;
+}
+
 .userName {
   font-size: 1rem;
   font-weight: var(--large-font);
@@ -100,6 +108,12 @@
   margin-bottom: 0.5rem;
 }
 
+.linkItemIcon {
+  display: flex;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
 .linkItem p {
   font-size: 0.8125rem;
   font-weight: var(--small-font);
@@ -108,10 +122,6 @@
 a {
   color: var(--white);
   text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
 }
 
 .opacity {
@@ -207,14 +217,36 @@ a:hover {
 
 @media screen and (min-width: 56rem) {
   .profileCard {
+    gap: 2.31rem;
     padding: 3rem;
+    display: flex;
   }
 
   .loadingCard {
     min-height: 20rem;
   }
 
+  .mobileWrap {
+    display: none;
+  }
+
+  .desktopImage {
+    display: block;
+  }
+  
+  .wrapper {
+    flex-grow: 1;
+  }
+
+  .dektopProfileDetails {
+    display: block;
+  }
+  
   .profileLinks {
     justify-content: space-between;
+  }
+
+  a:hover {
+    text-decoration: underline;
   }
 }
