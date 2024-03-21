@@ -14,7 +14,9 @@ input {
   border: none;
   padding: 0 2.81rem;
   border-radius: 0.9375rem;
-  background: var(--dark-navy);
+  color: var(--brand-color);
+  background: var(--component-background);
+  box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.2);
 }
 
 input:focus {
@@ -22,9 +24,9 @@ input:focus {
 }
 
 ::placeholder {
-  color: var(--white);
   font-size: 0.8125rem;
   line-height: 1.5625rem;
+  color: var(--text-color);
   font-weight: var(--small-font);
 }
 
@@ -63,27 +65,15 @@ input:focus {
   width: 5.25rem;
   right: 0.44rem;
   position: absolute;
-  color: var(--white);
   padding: 1rem 0.78rem;
   border-radius: 0.625rem;
   transform: translateY(-50%);
   background: var(--deep-blue);
-}
-
-@media (prefers-color-scheme: light) {
-  input {
-    color: var(--deep-grey);
-    background: var(--pale-white);
-    box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.20);
-  }
-
-  ::placeholder {
-    color: var(--grey);
-  }
+  color: var(--dark-text-color);
 }
 
 @media screen and (min-width: 45rem) {
-  .form { 
+  .form {
     margin-bottom: 1.5rem;
   }
 }
@@ -118,8 +108,15 @@ input:focus {
   .button:hover {
     background-color: var(--light-blue);
   }
-  
-  input, .button:hover {
+
+  input,
+  .button:hover {
     cursor: pointer;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  input {
+    box-shadow: none;
   }
 }

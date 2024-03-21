@@ -1,47 +1,43 @@
 :root {
   /* defining global color scheme */
-  color-scheme: dark light;
+  color-scheme: light dark;
 
   /* defining font weights as variables */
   --small-font: 400;
   --large-font: 700;
-  
+
   /* defining global colors as variables */
   --red: rgba(247, 70, 70, 1);
   --black: rgba(43, 52, 66, 1);
-  --grey: rgba(75, 106, 155, 1);
-  --white: rgba(255, 255, 255, 1);
-  --deep-grey: rgba(34, 39, 49, 1);
-  --dark-navy: rgba(30, 42, 71, 1);
-  --dark-black: rgba(20, 29, 47, 1);
   --deep-blue: rgba(0, 121, 255, 1);
-  --pale-blue: rgba(246, 248, 255, 1);
   --blue-grey: rgba(144, 164, 212, 1);
   --light-blue: rgba(96, 171, 255, 1);
-  --pale-white: rgba(254, 254, 254, 1);
   --light-grey: rgba(105, 124, 154, 1);
 }
 
 body {
+  --brand-color: rgba(34, 39, 49, 1);
+  --text-color: rgba(75, 106, 155, 1);
+  --background-color: rgba(246, 248, 255, 1);
+  --component-background: rgba(254, 254, 254, 1);
+
   margin: 0;
   width: 100vw;
   box-sizing: border-box;
   padding: 1.94rem 1.5rem;
+  color: var(--text-color);
+  background: var(--background-color);
   font-family: "Space Mono", monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  body {
-    color: var(--white);
-    background:  var(--dark-black);
-  }
-}
+body.dark-theme {
+  --text-color: rgba(255, 255, 255, 1);
+  --brand-color: rgba(255, 255, 255, 1);
+  --background-color: rgba(20, 29, 47, 1);
+  --component-background: rgba(30, 42, 71, 1);
 
-@media (prefers-color-scheme: light) {
-  body {
-    color: var(--grey);
-    background: var(--pale-blue);
-  }
+  color: var(--text-color);
+  background: var(--background-color);
 }
 
 @media screen and (min-width: 45rem) {
@@ -58,6 +54,28 @@ body {
 
 @media screen and (min-width: 56rem) {
   body {
-    padding: 1rem 16rem;
+    padding: 2rem 16rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    --text-color: rgba(255, 255, 255, 1);
+    --brand-color: rgba(255, 255, 255, 1);
+    --background-color: rgba(20, 29, 47, 1);
+    --component-background: rgba(30, 42, 71, 1);
+
+    color: var(--text-color);
+    background: var(--background-color);
+  }
+
+  body.light-theme {
+    --brand-color: rgba(34, 39, 49, 1);
+    --text-color: rgba(75, 106, 155, 1);
+    --background-color: rgba(246, 248, 255, 1);
+    --component-background: rgba(254, 254, 254, 1);
+
+    color: var(--text-color);
+    background: var(--background-color);
   }
 }

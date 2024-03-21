@@ -1,31 +1,35 @@
 .header {
   width: 100%;
-  display: flex;
-  align-items: center;
   margin-bottom: 2.25rem;
-  justify-content: space-between;
 }
 
 .brand {
   font-size: 1.625rem;
-  font-weight: var(--large-font);
+  color: var(--brand-color);
 }
 
 .themeSwitch {
   gap: 1rem;
   padding: 0;
   border: none;
-  display: flex;
   height: 1.25rem;
   background: none;
-  align-items: center;
-  justify-content: space-between;
+  color: var(--light-grey);
 }
 
 .switchIconText {
   font-size: 0.8125rem;
   text-transform: uppercase;
   letter-spacing: 0.15625rem;
+}
+
+.header, .themeSwitch {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand, .switchIconText {
   font-weight: var(--large-font);
 }
 
@@ -34,20 +38,6 @@
   display: flex;
   width: 1.25rem;
   align-items: center;
-}
-
-@media (prefers-color-scheme: light) {
-  .brand {
-    color: var(--deep-grey);
-  }
-
-  .themeSwitch {
-    color: var(--light-grey);
-  }
-
-  .themeSwitch:hover {
-    color: var(--deep-grey);
-  }
 }
 
 @media screen and (min-width: 45rem) {
@@ -63,6 +53,18 @@
 
   .themeSwitch:hover {
     cursor: pointer;
+    color: var(--brand-color);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .themeSwitch {
+    color: var(--text-color);
+  }
+}
+
+@media (prefers-color-scheme: dark) and (min-width: 56rem) {
+  .themeSwitch:hover {
     color: var(--blue-grey);
   }
 }

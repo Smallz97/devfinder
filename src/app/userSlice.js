@@ -4,7 +4,7 @@ export const setUserSlice = createSlice ({
     name: 'user',
     initialState: {
         user: {},
-        theme: 'dark',
+        theme: 'light',
         loaded: false,
         loading: false,
         notFound: false,
