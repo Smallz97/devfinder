@@ -54,12 +54,22 @@ const ProfileCard = () => {
   }
 
   const renderProfileLink = ({ Icon, text }, index) => {
+    let fillColor;
+
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches)  {
+      fillColor = text ? "grey" : "darkgrey";
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      fillColor = text ? "white" : "darkgrey";
+    }
+
+    const assignClass = text ? "" : styles.opacity;
+    const assignText = text ? text : "Not available";
     return (
       <div key={index} className={styles.linkItem}>
         <div className={styles.linkItemIcon}>
-          <Icon />
+          <Icon fillColor={fillColor}/>
         </div>
-        {text === user.blog ? <p><a href={text} className={text ? "" : styles.opacity}>{text ? text : "Not available"}</a></p> : <p className={text ? "" : styles.opacity}>{text ? text : "Not available"}</p>}
+        {text === user.blog ? <p><a href={text} className={assignClass}>{assignText}</a></p> : <p className={assignClass}>{assignText}</p>}
       </div>
     );
   }

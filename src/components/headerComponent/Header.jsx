@@ -17,10 +17,10 @@ const Header = () => {
             </div>
             <button id="theme" className={styles.themeSwitch} onClick={toggler}>
                 <div className={styles.switchIconText}>
-                    {theme === "dark" ? "light" : "dark"}
+                    {theme === "light" ? "dark" : "light"}
                 </div>
                 <div className={styles.switchIcon}>
-                   {theme === "dark" ? <LightIcon /> : <DarkIcon />}
+                   {theme === "light" ? <DarkIcon /> : <LightIcon />}
                 </div>
             </button>
         </div>

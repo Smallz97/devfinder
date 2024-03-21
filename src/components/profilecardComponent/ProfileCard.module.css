@@ -2,16 +2,15 @@
   display: flex;
   min-height: 32rem;
   align-items: center;
-  padding: 2rem 1.5rem;
   justify-content: center;
-  border-radius: 0.9375rem;
-  background: var(--dark-navy);
 }
 
+.loadingCard,
 .profileCard {
   padding: 2rem 1.5rem;
   border-radius: 0.9375rem;
-  background: var(--dark-navy);
+  background: var(--component-background);
+  box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.2);
 }
 
 .userDetails {
@@ -41,34 +40,36 @@
   margin: 0;
 }
 
-.desktopImage {
-  display: none;
-}
-
+.desktopImage,
 .dektopProfileDetails {
   display: none;
 }
 
 .userName {
   font-size: 1rem;
+  color: var(--black);
   font-weight: var(--large-font);
 }
 
 .userHandle {
-  font-size: 0.8125rem;
   color: var(--deep-blue);
-  font-weight: var(--small-font);
 }
 
 .userDateJoined {
-  font-size: 0.8125rem;
-  font-weight: var(--small-font);
+  color: var(--light-grey);
 }
 
-.profileDescription, .noProfileDescription {
-  font-size: 0.8125rem;
+.profileDescription,
+.noProfileDescription {
   margin-bottom: 1.44rem;
   line-height: 1.5625rem;
+}
+
+.userHandle,
+.userDateJoined,
+.profileDescription,
+.noProfileDescription {
+  font-size: 0.8125rem;
   font-weight: var(--small-font);
 }
 
@@ -83,16 +84,18 @@
   border-radius: 0.625rem;
   padding: 1.19rem 0.87rem;
   justify-content: space-around;
-  background: var(--dark-black);
+  background: var(--background-color);
 }
 
 .stat {
   font-size: 0.6875rem;
+  color: var(--text-color);
   font-weight: var(--small-font);
 }
 
 .count {
   font-size: 1rem;
+  color: var(--black);
   font-weight: var(--large-font);
 }
 
@@ -120,48 +123,17 @@
 }
 
 a {
-  color: var(--white);
   text-decoration: none;
+  color: var(--text-color);
 }
 
 .opacity {
-  opacity: .5;
+  opacity: 0.5;
 }
 
-.loadingText, .notFound {
+.loadingText,
+.notFound {
   text-align: center;
-}
-
-@media (prefers-color-scheme: light) {
-  .loadingCard {
-    background: var(--pale-white);
-    box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.20);
-  }
-
-  .profileCard {
-    background: var(--pale-white);
-    box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.20);
-  }
-
-  .userName {
-    color: var(--black);
-  }
-
-  .userDateJoined {
-    color: var(--light-grey);
-  }
-
-  .profileStats {
-    background: var(--pale-blue);
-  }
-
-  .count {
-    color: var(--black);
-  }
-
-  a {
-    color: var(--grey);
-  }
 }
 
 @media screen and (min-width: 45rem) {
@@ -182,8 +154,13 @@ a {
     gap: 3.5rem;
   }
 
-  .profileDescription, .noProfileDescription {
+  .profileDescription,
+  .noProfileDescription {
     font-size: 0.9375rem;
+  }
+
+  .profileStats {
+    padding: 0.94rem 2rem;
   }
 
   .stat {
@@ -195,9 +172,9 @@ a {
   }
 
   .profileLinks {
+    gap: 6rem;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
   }
 
   .linkItem {
@@ -230,23 +207,24 @@ a {
     display: none;
   }
 
-  .desktopImage {
-    display: block;
-  }
-  
   .wrapper {
     flex-grow: 1;
   }
 
+  .desktopImage,
   .dektopProfileDetails {
     display: block;
-  }
-  
-  .profileLinks {
-    justify-content: space-between;
   }
 
   a:hover {
     text-decoration: underline;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .count,
+  .userName,
+  .userDateJoined {
+    color: var(--text-color);
   }
 }
