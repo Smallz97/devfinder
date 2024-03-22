@@ -6,6 +6,8 @@ import styles from "./Header.module.css"
 const Header = () => {
     const dispatch = useDispatch();
     const { theme } = useSelector((state) => state.user);
+
+    const fillColor = theme === 'light' ? '#697C9A' : theme === 'dark' ? '#FFFFFF' : '#697C9A';
     
     const toggler = () => {
         dispatch(toggleTheme());
@@ -20,7 +22,7 @@ const Header = () => {
                     {theme === "light" ? "dark" : "light"}
                 </div>
                 <div className={styles.switchIcon}>
-                   {theme === "light" ? <DarkIcon /> : <LightIcon />}
+                   {theme === "light" ? <DarkIcon fillColor={fillColor}/> : <LightIcon fillColor={fillColor}/>}
                 </div>
             </button>
         </div>

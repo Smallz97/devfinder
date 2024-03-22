@@ -216,12 +216,24 @@ a {
     display: block;
   }
 
+  .userName {
+    font-size: 1.625rem;
+  }
+
+  .userHandle {
+    font-size: 1rem;
+  }
+
   a:hover {
     text-decoration: underline;
   }
 }
 
 @media (prefers-color-scheme: dark) {
+  .loadingCard,
+  .profileCard {
+    box-shadow: none;
+  }
   .count,
   .userName,
   .userDateJoined {

@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux'
 import svgArray from '../../app/iconsArray'
 import styles from './ProfileCard.module.css'
 const ProfileCard = () => {
-  const { user, loading, notFound } = useSelector((state) => state.user);
+  const { user, theme, loading, notFound } = useSelector((state) => state.user);
 
   const date = user.dateJoined;
   const parsedDate = new Date(date);
@@ -54,16 +54,9 @@ const ProfileCard = () => {
   }
 
   const renderProfileLink = ({ Icon, text }, index) => {
-    let fillColor;
-
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches)  {
-      fillColor = text ? "grey" : "darkgrey";
-    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      fillColor = text ? "white" : "darkgrey";
-    }
-
     const assignClass = text ? "" : styles.opacity;
     const assignText = text ? text : "Not available";
+    const fillColor = theme === "light" ? (text ? "#4B6A9B" : "#697C9A") : (text ? "#FFFFFF" : "#697C9A");
     return (
       <div key={index} className={styles.linkItem}>
         <div className={styles.linkItemIcon}>
