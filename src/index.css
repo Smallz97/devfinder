@@ -13,6 +13,7 @@
   --blue-grey: rgba(144, 164, 212, 1);
   --light-blue: rgba(96, 171, 255, 1);
   --light-grey: rgba(105, 124, 154, 1);
+  --button-color: rgba(255, 255, 255, 1);
 }
 
 body {
