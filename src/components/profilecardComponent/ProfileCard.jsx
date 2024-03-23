@@ -60,7 +60,7 @@ const ProfileCard = () => {
     return (
       <div key={index} className={styles.linkItem}>
         <div className={styles.linkItemIcon}>
-          <Icon fillColor={fillColor}/>
+          <Icon fillColor={fillColor} />
         </div>
         {text === user.blog ? <p><a href={text} className={assignClass}>{assignText}</a></p> : <p className={assignClass}>{assignText}</p>}
       </div>
@@ -82,10 +82,10 @@ const ProfileCard = () => {
                 {profileDetails.map(renderProfileDetails)}
               </div>
             </div>
-            <div className={`${styles.userImageWrap} ${styles.desktopImage}`}>
+            <div className={`${styles.userImageWrap} ${styles.desktopImageWrap}`}>
               <img src={user.avatar} alt="user image" className={styles.userImage} />
             </div>
-            <div className={styles.wrapper}>
+            <div className={styles.profileWrapper}>
               <div className={`${styles.userProfileDetails} ${styles.dektopProfileDetails}`}>
                 {profileDetails.map(renderProfileDetails)}
               </div>

@@ -67,7 +67,7 @@ input:focus {
   position: absolute;
   padding: 1rem 0.78rem;
   border-radius: 0.625rem;
-  color: var(--button-color);
+  color: var(--button-text);
   transform: translateY(-50%);
   background: var(--deep-blue);
 }
@@ -106,7 +106,7 @@ input:focus {
   }
 
   .button:hover {
-    background-color: var(--light-blue);
+    background-color: var(--button-hover);
   }
 
   input,

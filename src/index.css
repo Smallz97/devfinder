@@ -8,17 +8,17 @@
 
   /* defining global colors as variables */
   --red: rgba(247, 70, 70, 1);
-  --black: rgba(43, 52, 66, 1);
   --deep-blue: rgba(0, 121, 255, 1);
-  --blue-grey: rgba(144, 164, 212, 1);
-  --light-blue: rgba(96, 171, 255, 1);
-  --light-grey: rgba(105, 124, 154, 1);
-  --button-color: rgba(255, 255, 255, 1);
+  --button-text: rgba(255, 255, 255, 1);
+  --button-hover: rgba(96, 171, 255, 1);
 }
 
 body {
   --brand-color: rgba(34, 39, 49, 1);
+  --switch-hover: rgba(34, 39, 49, 1);
   --text-color: rgba(75, 106, 155, 1);
+  --alt-text-color: rgba(43, 52, 66, 1);
+  --switch-color: rgba(105, 124, 154, 1);
   --background-color: rgba(246, 248, 255, 1);
   --component-background: rgba(254, 254, 254, 1);
 
@@ -34,7 +34,10 @@ body {
 body.dark-theme {
   --text-color: rgba(255, 255, 255, 1);
   --brand-color: rgba(255, 255, 255, 1);
+  --switch-hover: rgba(144, 164, 212, 1);
+  --switch-color: rgba(255, 255, 255, 1);
   --background-color: rgba(20, 29, 47, 1);
+  --alt-text-color: rgba(255, 255, 255, 1);
   --component-background: rgba(30, 42, 71, 1);
 
   color: var(--text-color);
@@ -63,7 +66,10 @@ body.dark-theme {
   body {
     --text-color: rgba(255, 255, 255, 1);
     --brand-color: rgba(255, 255, 255, 1);
+    --switch-hover: rgba(144, 164, 212, 1);
+    --switch-color: rgba(255, 255, 255, 1);
     --background-color: rgba(20, 29, 47, 1);
+    --alt-text-color: rgba(255, 255, 255, 1);
     --component-background: rgba(30, 42, 71, 1);
 
     color: var(--text-color);
@@ -72,7 +78,10 @@ body.dark-theme {
 
   body.light-theme {
     --brand-color: rgba(34, 39, 49, 1);
+    --switch-hover: rgba(34, 39, 49, 1);
     --text-color: rgba(75, 106, 155, 1);
+    --alt-text-color: rgba(43, 52, 66, 1);
+    --switch-color: rgba(105, 124, 154, 1);
     --background-color: rgba(246, 248, 255, 1);
     --component-background: rgba(254, 254, 254, 1);
 

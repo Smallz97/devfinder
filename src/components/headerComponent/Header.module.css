@@ -14,7 +14,7 @@
   border: none;
   height: 1.25rem;
   background: none;
-  color: var(--light-grey);
+  color: var(--switch-color);
 }
 
 .switchIconText {
@@ -23,13 +23,15 @@
   letter-spacing: 0.15625rem;
 }
 
-.header, .themeSwitch {
+.header,
+.themeSwitch {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.brand, .switchIconText {
+.brand,
+.switchIconText {
   font-weight: var(--large-font);
 }
 
@@ -53,18 +55,6 @@
 
   .themeSwitch:hover {
     cursor: pointer;
-    color: var(--brand-color);
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .themeSwitch {
-    color: var(--text-color);
-  }
-}
-
-@media (prefers-color-scheme: dark) and (min-width: 56rem) {
-  .themeSwitch:hover {
-    color: var(--blue-grey);
+    color: var(--switch-hover);
   }
 }
