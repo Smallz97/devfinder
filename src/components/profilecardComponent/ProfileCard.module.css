@@ -40,14 +40,14 @@
   margin: 0;
 }
 
-.desktopImage,
+.desktopImageWrap,
 .dektopProfileDetails {
   display: none;
 }
 
 .userName {
   font-size: 1rem;
-  color: var(--black);
+  color: var(--alt-text-color);
   font-weight: var(--large-font);
 }
 
@@ -56,7 +56,7 @@
 }
 
 .userDateJoined {
-  color: var(--light-grey);
+  color: var(--switch-color);
 }
 
 .profileDescription,
@@ -95,7 +95,7 @@
 
 .count {
   font-size: 1rem;
-  color: var(--black);
+  color: var(--alt-text-color);
   font-weight: var(--large-font);
 }
 
@@ -207,11 +207,11 @@ a {
     display: none;
   }
 
-  .wrapper {
+  .profileWrapper {
     flex-grow: 1;
   }
 
-  .desktopImage,
+  .desktopImageWrap,
   .dektopProfileDetails {
     display: block;
   }
@@ -233,10 +233,5 @@ a {
   .loadingCard,
   .profileCard {
     box-shadow: none;
-  }
-  .count,
-  .userName,
-  .userDateJoined {
-    color: var(--text-color);
   }
 }
