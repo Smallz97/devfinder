@@ -42,7 +42,6 @@ export const setUserSlice = createSlice({
         : (body.classList.add("light-theme"),
           body.classList.remove("dark-theme"));
       state.theme = state.theme === "light" ? "dark" : "light";
-      console.log(body);
     },
   },
 });

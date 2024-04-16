@@ -58,7 +58,11 @@ body.dark-theme {
 
 @media screen and (min-width: 56rem) {
   body {
-    padding: 2rem 16rem;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
   }
 }
 
