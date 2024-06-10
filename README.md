@@ -33,8 +33,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Frontend Mentor Challange Solution](https://your-solution-url.com)
-- Live Site URL: [Live Site](https://your-live-site-url.com)
+- Solution URL: [Challange Submission](https://your-solution-url.com)
+- Live Site URL: [Devfinder](https://devfinder-v1.web.app)
 
 ## My process
 
